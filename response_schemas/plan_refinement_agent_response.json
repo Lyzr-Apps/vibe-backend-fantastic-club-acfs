@@ -1,0 +1,170 @@
+{
+  "agent_name": "Plan Refinement Agent",
+  "agent_id": "69a531c8a7fbf6e11e247c59",
+  "description": "Conversational agent that allows users to iteratively refine the generated plan -- adjust modules, rename entities, add/remove roles, modify endpoints, and tweak workflows through natural language chat",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "message": "string",
+    "changes_summary": [
+      "string"
+    ],
+    "updated_modules": [
+      {
+        "name": "string",
+        "description": "string",
+        "features": [
+          {
+            "name": "string",
+            "description": "string",
+            "sub_features": [
+              "string"
+            ]
+          }
+        ],
+        "workflows": [
+          {
+            "name": "string",
+            "steps": [
+              "string"
+            ]
+          }
+        ]
+      }
+    ],
+    "updated_entities": [
+      {
+        "name": "string",
+        "description": "string",
+        "table_name": "string",
+        "partition_key": "string",
+        "sort_key": "string",
+        "attributes": [
+          {
+            "name": "string",
+            "type": "string",
+            "required": "boolean",
+            "description": "string"
+          }
+        ],
+        "gsi": [
+          {
+            "name": "string",
+            "partition_key": "string",
+            "sort_key": "string"
+          }
+        ],
+        "relationships": [
+          {
+            "target_entity": "string",
+            "type": "string",
+            "foreign_key": "string"
+          }
+        ]
+      }
+    ],
+    "updated_endpoints": [
+      {
+        "module": "string",
+        "method": "string",
+        "path": "string",
+        "description": "string",
+        "auth_required": "boolean",
+        "allowed_roles": [
+          "string"
+        ]
+      }
+    ],
+    "updated_roles": [
+      {
+        "name": "string",
+        "description": "string",
+        "permissions": [
+          "string"
+        ]
+      }
+    ]
+  },
+  "example_response": {
+    "message": "sample string",
+    "changes_summary": [
+      "sample string"
+    ],
+    "updated_modules": [
+      {
+        "name": "sample string",
+        "description": "sample string",
+        "features": [
+          {
+            "name": "sample string",
+            "description": "sample string",
+            "sub_features": [
+              "sample string"
+            ]
+          }
+        ],
+        "workflows": [
+          {
+            "name": "sample string",
+            "steps": [
+              "sample string"
+            ]
+          }
+        ]
+      }
+    ],
+    "updated_entities": [
+      {
+        "name": "sample string",
+        "description": "sample string",
+        "table_name": "sample string",
+        "partition_key": "sample string",
+        "sort_key": "sample string",
+        "attributes": [
+          {
+            "name": "sample string",
+            "type": "sample string",
+            "required": false,
+            "description": "sample string"
+          }
+        ],
+        "gsi": [
+          {
+            "name": "sample string",
+            "partition_key": "sample string",
+            "sort_key": "sample string"
+          }
+        ],
+        "relationships": [
+          {
+            "target_entity": "sample string",
+            "type": "sample string",
+            "foreign_key": "sample string"
+          }
+        ]
+      }
+    ],
+    "updated_endpoints": [
+      {
+        "module": "sample string",
+        "method": "sample string",
+        "path": "sample string",
+        "description": "sample string",
+        "auth_required": false,
+        "allowed_roles": [
+          "sample string"
+        ]
+      }
+    ],
+    "updated_roles": [
+      {
+        "name": "sample string",
+        "description": "sample string",
+        "permissions": [
+          "sample string"
+        ]
+      }
+    ]
+  }
+}

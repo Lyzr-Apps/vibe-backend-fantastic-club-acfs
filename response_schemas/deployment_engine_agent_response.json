@@ -1,0 +1,76 @@
+{
+  "agent_name": "Deployment Engine Agent",
+  "agent_id": "69a531c963f3fb9893f89e47",
+  "description": "Takes the approved plan and generates complete backend code (Lambda functions, Terraform configs, API Gateway definitions, DynamoDB schemas, Cognito setup), orchestrates the build pipeline, and returns deployment details including base URL, endpoints, and auth instructions",
+  "agent_type": "json",
+  "accessor": "result",
+  "auto_generated": true,
+  "response_schema": {
+    "deployment_status": "string",
+    "base_url": "string",
+    "region": "string",
+    "api_endpoints": [
+      {
+        "method": "string",
+        "path": "string",
+        "full_url": "string",
+        "description": "string",
+        "curl_command": "string"
+      }
+    ],
+    "auth_details": {
+      "user_pool_id": "string",
+      "client_id": "string",
+      "token_endpoint": "string",
+      "sample_auth_curl": "string"
+    },
+    "infrastructure": {
+      "lambda_functions": [
+        "string"
+      ],
+      "dynamodb_tables": [
+        "string"
+      ],
+      "api_gateway": "string",
+      "cognito_pool": "string"
+    },
+    "terraform_summary": "string",
+    "quick_start_guide": [
+      "string"
+    ]
+  },
+  "example_response": {
+    "deployment_status": "sample string",
+    "base_url": "sample string",
+    "region": "sample string",
+    "api_endpoints": [
+      {
+        "method": "sample string",
+        "path": "sample string",
+        "full_url": "sample string",
+        "description": "sample string",
+        "curl_command": "sample string"
+      }
+    ],
+    "auth_details": {
+      "user_pool_id": "sample string",
+      "client_id": "sample string",
+      "token_endpoint": "sample string",
+      "sample_auth_curl": "sample string"
+    },
+    "infrastructure": {
+      "lambda_functions": [
+        "sample string"
+      ],
+      "dynamodb_tables": [
+        "sample string"
+      ],
+      "api_gateway": "sample string",
+      "cognito_pool": "sample string"
+    },
+    "terraform_summary": "sample string",
+    "quick_start_guide": [
+      "sample string"
+    ]
+  }
+}

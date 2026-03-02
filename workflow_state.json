@@ -1,0 +1,28 @@
+{
+  "agents": {
+    "plan_architect_manager": {
+      "agent_id": "69a531a2601bdd4db8d93a0b",
+      "type": "manager"
+    },
+    "module_feature_designer": {
+      "agent_id": "69a53158227dc30e21e15f4c",
+      "type": "sub-agent"
+    },
+    "data_model_architect": {
+      "agent_id": "69a53159b9d55abdea083b24",
+      "type": "sub-agent"
+    },
+    "api_auth_designer": {
+      "agent_id": "69a5315996e0e3e22def7926",
+      "type": "sub-agent"
+    },
+    "plan_refinement_agent": {
+      "agent_id": "69a531c8a7fbf6e11e247c59",
+      "type": "independent"
+    },
+    "deployment_engine_agent": {
+      "agent_id": "69a531c963f3fb9893f89e47",
+      "type": "independent"
+    }
+  }
+}
