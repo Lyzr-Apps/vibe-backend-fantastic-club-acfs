@@ -327,7 +327,7 @@ export default function Page() {
               </div>
             </div>
           </header>
-          <main className="flex-1 overflow-hidden">
+          <main className="flex-1 overflow-auto">
             {currentScreen === 'dashboard' && (
               <Dashboard
                 projects={displayProjects}

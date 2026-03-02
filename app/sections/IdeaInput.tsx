@@ -49,36 +49,51 @@ export default function IdeaInput({ onGeneratePlan, loading }: IdeaInputProps) {
   }, [loading])
 
   const handleSubmit = () => {
-    if (!idea.trim()) return
+    if (!idea.trim() || loading) return
     onGeneratePlan(idea.trim(), complexity)
   }
 
-  return (
-    <div className="flex items-center justify-center min-h-full p-6">
-      <div className="w-full max-w-2xl space-y-6">
-        {/* Title */}
-        <div className="text-center space-y-2">
-          <div className="w-14 h-14 rounded-2xl bg-primary/15 flex items-center justify-center mx-auto glow-primary">
-            <FiZap className="w-7 h-7 text-primary" />
-          </div>
-          <h1 className="text-2xl font-bold tracking-tight mt-4">What do you want to build?</h1>
-          <p className="text-sm text-muted-foreground max-w-md mx-auto">
-            Describe your software idea in plain English. CloudForge will design the complete backend architecture.
-          </p>
-        </div>
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+      e.preventDefault()
+      handleSubmit()
+    }
+  }
 
-        {/* Textarea */}
-        <Card className="bg-card border-border">
-          <CardContent className="p-4">
-            <Textarea
-              value={idea}
-              onChange={(e) => setIdea(e.target.value)}
-              placeholder="Describe the software you want to build..."
-              className="min-h-[180px] bg-transparent border-none resize-none text-base focus-visible:ring-0 placeholder:text-muted-foreground/50"
-              disabled={loading}
-            />
-          </CardContent>
-        </Card>
+  return (
+    <div className="h-full overflow-y-auto">
+      <div className="flex items-start justify-center min-h-full p-6 py-10">
+        <div className="w-full max-w-2xl space-y-6">
+          {/* Title */}
+          <div className="text-center space-y-2">
+            <div className="w-14 h-14 rounded-2xl bg-primary/15 flex items-center justify-center mx-auto glow-primary">
+              <FiZap className="w-7 h-7 text-primary" />
+            </div>
+            <h1 className="text-2xl font-bold tracking-tight mt-4">What do you want to build?</h1>
+            <p className="text-sm text-muted-foreground max-w-md mx-auto">
+              Describe your software idea in plain English. CloudForge will design the complete backend architecture.
+            </p>
+          </div>
+
+          {/* Textarea */}
+          <Card className="bg-card border-border">
+            <CardContent className="p-4">
+              <Textarea
+                value={idea}
+                onChange={(e) => setIdea(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder="Describe the software you want to build..."
+                className="min-h-[150px] bg-transparent border-none resize-none text-base focus-visible:ring-0 placeholder:text-muted-foreground/50"
+                disabled={loading}
+              />
+              <div className="flex items-center justify-between mt-2 pt-2 border-t border-border/50">
+                <span className="text-xs text-muted-foreground">
+                  {idea.trim().length > 0 ? `${idea.trim().length} characters` : 'Type or pick an example below'}
+                </span>
+                <span className="text-xs text-muted-foreground">Ctrl+Enter to generate</span>
+              </div>
+            </CardContent>
+          </Card>
 
         {/* Example Chips */}
         <div className="flex flex-wrap gap-2 justify-center">
@@ -150,6 +165,7 @@ export default function IdeaInput({ onGeneratePlan, loading }: IdeaInputProps) {
             </p>
           </div>
         )}
+        </div>
       </div>
     </div>
   )
